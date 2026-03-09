@@ -1,4 +1,4 @@
-package com.boda.diegoycris;
+package com.boda.diegoycris.Models;
 
 public enum Assist {
     YES,
