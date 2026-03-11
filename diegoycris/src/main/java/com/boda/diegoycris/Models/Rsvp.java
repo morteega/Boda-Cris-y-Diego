@@ -1,4 +1,4 @@
-package com.boda.diegoycris.Models;
+package com.boda.diegoycris.models;
 import java.util.Date;
 
 import jakarta.persistence.*;
