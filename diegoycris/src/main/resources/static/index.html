@@ -4,50 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Diego y Cris - Nuestra Boda</title>
-        <style>
-            body, html { height: 100%; margin: 0; font-family: system-ui, Arial, sans-serif;  }
-           
-            .hero {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                    url('/img/image.jpg');
-                background-size: cover;
-                background-position: center;
-                color:white;
-                padding:24px;  
-            }
-            h1 {
-                font-size: clamp(2rem, 5vw, 3.5rem);
-                margin: 0 0 10px 0;
-            }
-             p {
-                font-size: clamp(1rem, 2.5vw, 1.25rem);
-                margin: 0;
-                opacity: 0.95;
-            }
-            .card {
-                background: rgba(0,0,0,0.25);
-                padding: 24px 28px;
-                border-radius: 18px;
-                backdrop-filter: blur(6px);
-                max-width: 720px;
-            }
-            </style>
+    </head>
             <body>
-                <div class="hero">
-                  <div class="card">
+                <div>
+                    <img src="img/imagen_elegida.jpg" alt="Foto de Diego y Cristina" class="hero-image"><!-- alt sirve para si no carga la imagen almenso tener un texto que describa lo que queria enseñar com la imagen-->
                     <h1>Bienvenidos a la boda de Diego y Cristina 💍</h1>
+                    <h2>Informacion importante:</h2>
+                    <p>Lugar de la ceremonia: Antiguo convento de Boadilla:
+                        <a href="https://elconvento.net/" target="blank">Visitar sitio web</a>
+                    </p>
+                    <p>Cómo llegar al lugar de la ceremonia:<!--target="_blank" sirve para abrir el link en una nueva ventana    y title sirve para cuando pasar el raton por encima dar informacion de a donde te va a llevar el link-->
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="_blank">Ver en Google Maps</a>
+                    </p>
                     <p>¡Nos hace mucha ilusión compartir este día con vosotros!</p>
-              </div>
             </div>
         </body>
-        
-    </head>
-</html>
 </html>
