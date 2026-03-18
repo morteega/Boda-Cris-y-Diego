@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Diego y Cris - Nuestra Boda</title>
+        <link rel="stylesheet" href="estilos.css"><!--Enlazamos el archivo de estilos para darle formato a nuestra pagina-->
     </head>
             <body>
                 <div>
@@ -14,9 +15,31 @@
                         <a href="https://elconvento.net/" target="blank">Visitar sitio web</a>
                     </p>
                     <p>Cómo llegar al lugar de la ceremonia:<!--target="_blank" sirve para abrir el link en una nueva ventana    y title sirve para cuando pasar el raton por encima dar informacion de a donde te va a llevar el link-->
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="_blank">Ver en Google Maps</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="blank">Ver en Google Maps</a>
                     </p>
-                    <p>¡Nos hace mucha ilusión compartir este día con vosotros!</p>
+                    <p class="parrafo1"> <!--Las clases sirven para modificar el estilo de aquellos elementos que pertenecen a esa misma clase, en css se escribe .clase para indicar esa clase-->
+                        Número de contacto / link para los taxis de la zona:
+                    </p>
+                    <p class="transporte">
+                        <strong>Transporte público para llegar al lugar de la ceremonia:</strong>
+                    </p>
+                    <p>
+                        Estancias recomendadas para invitados de fuera de la ciudad:
+                    </p>
+                    <p>
+                        ¡Nos hace mucha ilusión compartir este día con vosotros!
+                        Confirmacion de asistencia: Por favor, confirma tu asistencia antes del 1 de septiembre a través de nuestro formulario de confirmación:
+                    </p>
+                        
+                        <form id="formularioUnico"><!--El fomrmulario una vez lo envie necesitare recopilar cada uno de sus campos para la base de datos que este utilizando-->
+                            <input type="text" name="nombreCompleto" placeholder="Tu nombre completo" required><!--Cuando reciba los campos, el nombre sera necesario para la base de datos-->
+                            <select name="asistencia">
+                                <option value="asistira">Asistiré</option>
+                                <option value="noAsistira">No podré asistir</option>
+                            </select>
+                            <button type="submit" required>Confirmar Asistencia</button><!--Required es para que el usuario no pueda enviar el formulario sin haber rellenado ese campo-->
+                        </form>
+                    </p>
             </div>
         </body>
 </html>

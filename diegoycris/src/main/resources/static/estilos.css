@@ -1,0 +1,22 @@
+.parrafo1{
+    font-size: 15px;
+    font-weight: bold;
+    color: brown;
+    font-family: 'Alex Brush';
+    font-style: oblique;
+}
+.transporte{
+    text-align:left;
+}
+#formularioUnico{
+    text-align: center;
+    background-color: rgb(242, 245, 220);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 40px auto;
+}
+p {
+    text-align:center;
+    line-height: 2;
+}
