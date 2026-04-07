@@ -1,5 +1,15 @@
+.body{
+    margin-left: 0;
+    padding: 0;
+}
+.title{
+    box-sizing: border-box;
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+}
 .parrafo1{
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: brown;
     font-family: 'Alex Brush';
@@ -9,14 +19,42 @@
     text-align:left;
 }
 #formularioUnico{
-    text-align: center;
-    background-color: rgb(242, 245, 220);
-    padding: 20px;
+    box-sizing: border-box;
+    padding: 0;
     border-radius: 10px;
-    width: 300px;
-    margin: 40px auto;
+    width: 150px;
+    margin: 0 auto;
 }
+.formulario_input, .formulario_select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px 9px;
+    border: none;
+    border-top: 1px solid black;
+    background-color: whitesmoke;
+    opacity: 0.65;
+}
+.formulario_button{
+    box-sizing: border-box;
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 5%;
+    padding: 2px 0;
+    border: none;
+    border-top: 1px solid black;
+    background-color: whitesmoke;
+}
+
 p {
     text-align:center;
     line-height: 2;
+}
+.hero-image{
+    background-image: url('img/imagen_elegida.jpg');
+    height: 100vh;
+    width: 100vw;
+}
+.hero-text{
+    margin: 0;
+    padding: 100px;
 }
