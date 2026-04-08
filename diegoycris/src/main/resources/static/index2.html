@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diego y Cris - Nuestra Boda</title>
+        <link rel="stylesheet" href="estilosChatGPT.css"><!--Enlazamos el archivo de estilos para darle formato a nuestra pagina-->
+    </head>
+            <body class="body">
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <!-- alt sirve para si no carga la imagen almenso tener un texto que describa lo que queria enseñar com la imagen-->
+                        <h1 class="title">Bienvenidos a la boda de Diego y Cristina 💍</h1>
+                        <h2 class="subtitle">Informacion importante:</h2>
+                        <p>Lugar de la ceremonia: Antiguo convento de Boadilla:
+                            <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+                        </p>
+                        <p>Cómo llegar al lugar de la ceremonia:<!--target="_blank" sirve para abrir el link en una nueva ventana    y title sirve para cuando pasar el raton por encima dar informacion de a donde te va a llevar el link-->
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="_blank">Ver en Google Maps</a>
+                        </p>
+                        <div>
+                            <h3 class="NumeroTelefonoTaxis"> <!--Las clases sirven para modificar el estilo de aquellos elementos que pertenecen a esa misma clase, en css se escribe .clase para indicar esa clase-->
+                                Número de contacto / link para los taxis de la zona:
+                            </h3>
+                            <p class="Numeros_Links">
+                                Taxi Boadilla: <a class="TaxiBoadilla" href="tel:+34916438651">Llamar al 91 643 86 51</a>, 
+                                o entrar en su pagina web: <a class="PaginaWebTaxiBoadilla" href="https://www.radiotaxiboadilladelmonte.es/" target="_blank">Sitio web</a>
+                            </p>
+                            <h4 class="EstanciasHoteles">
+                                Estancias recomendadas para invitados de fuera de la ciudad:
+                            </h4>
+                            <p class="HotelesRecomendados">
+                                Aqui van los hoteles recomendados, con sus links.
+                            </p>
+                            <h5 class="TransportePublico">
+                                Transporte público para llegar al lugar de la ceremonia:
+                            </h5>
+                            <p class ="IndicacionesTransporte">
+                                Antes de las 2 de la mañana: Metro ligero ML3, parada "Colonia Jardin" (a 10 minutos a pie del lugar de la ceremonia),
+                                y desde Colonia Jardín, Metro Línea 10 hasta Príncipe Pío.
+                            <a class="LinkRutaMetro" href="https://maps.app.goo.gl/bTeu8MXis4Bp3rFo9" target="_blank">Link a la ruta</a>
+                                Después de las 2 de la mañana: Bus nocturno N902, parada "Ctra Majadahonda-Av.Adolfo Suarez" (a 5 minutos a pie del lugar de la ceremonia),
+                                y desde esa parada, Bus N902 hasta Moncloa.
+                            <a class="LinkBusNocturno" href="https://maps.app.goo.gl/rUhMUcKGp4VPCvbW7" target="_blank">Link a la ruta</a> 
+                        </div>
+                        
+                        </p>
+                        <p>
+                            Confirmacion de asistencia: Por favor, confirma tu asistencia antes del 1 de septiembre a través de nuestro formulario de confirmación:
+                        </p>
+                        
+                        <form id="formularioUnico"><!--El fomrmulario una vez lo envie necesitare recopilar cada uno de sus campos para la base de datos que este utilizando-->
+                            <input class="formulario_input" type="text" name="nombreCompleto" placeholder="Tu nombre completo" required><!--Cuando reciba los campos, el nombre sera necesario para la base de datos-->
+                            <select class="formulario_select" name="asistencia">
+                                <option class="formulario_option" value="asistira">Asistiré</option>
+                                <option class="formulario_option" value="noAsistira">No podré asistir</option>
+                            </select>
+                            <button class="formulario_button" type="submit" required>Confirmar Asistencia</button><!--Required es para que el usuario no pueda enviar el formulario sin haber rellenado ese campo-->
+                        </form>
+                    </p>
+                </div>
+            </div>
+        </body>
+</html>

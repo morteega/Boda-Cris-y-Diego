@@ -1,49 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Diego y Cris - Nuestra Boda</title>
-        <link rel="stylesheet" href="estilos.css"><!--Enlazamos el archivo de estilos para darle formato a nuestra pagina-->
-    </head>
-            <body class="body">
-                <div class="hero-image">
-                    <div class="hero-text">
-                        <!-- alt sirve para si no carga la imagen almenso tener un texto que describa lo que queria enseñar com la imagen-->
-                        <h1 class="title">Bienvenidos a la boda de Diego y Cristina 💍</h1>
-                        <h2 class="subtitle">Informacion importante:</h2>
-                        <p>Lugar de la ceremonia: Antiguo convento de Boadilla:
-                            <a href="https://elconvento.net/" target="blank">Visitar sitio web</a>
-                        </p>
-                        <p>Cómo llegar al lugar de la ceremonia:<!--target="_blank" sirve para abrir el link en una nueva ventana    y title sirve para cuando pasar el raton por encima dar informacion de a donde te va a llevar el link-->
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="blank">Ver en Google Maps</a>
-                        </p>
-                        <p class="parrafo1"> <!--Las clases sirven para modificar el estilo de aquellos elementos que pertenecen a esa misma clase, en css se escribe .clase para indicar esa clase-->
-                            Número de contacto / link para los taxis de la zona:
-                        </p>
-                        <p class="transporte">
-                            <strong>Transporte público para llegar al lugar de la ceremonia:</strong>
-                        </p>
-                        <p>
-                            Estancias recomendadas para invitados de fuera de la ciudad:
-                        </p>
-                        <p>
-                            ¡Nos hace mucha ilusión compartir este día con vosotros!
-                        </p>
-                        <p>
-                            Confirmacion de asistencia: Por favor, confirma tu asistencia antes del 1 de septiembre a través de nuestro formulario de confirmación:
-                        </p>
-                        
-                        <form id="formularioUnico"><!--El fomrmulario una vez lo envie necesitare recopilar cada uno de sus campos para la base de datos que este utilizando-->
-                            <input class="formulario_input" type="text" name="nombreCompleto" placeholder="Tu nombre completo" required><!--Cuando reciba los campos, el nombre sera necesario para la base de datos-->
-                            <select class="formulario_select" name="asistencia">
-                                <option class="formulario_option" value="asistira">Asistiré</option>
-                                <option class="formulario_option" value="noAsistira">No podré asistir</option>
-                            </select>
-                            <button class="formulario_button" type="submit" required>Confirmar Asistencia</button><!--Required es para que el usuario no pueda enviar el formulario sin haber rellenado ese campo-->
-                        </form>
-                    </p>
-                </div>
-            </div>
-        </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristina Y Diego | Nuestra Boda</title>
+  <link rel="stylesheet" href="estilosChatGPT.css">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="topbar">
+      <div class="brand">C&amp;D</div>
+      <div class="menu">
+        <a href="#bienvenida">Inicio</a>
+        <a href="#info">Información</a>
+        <a href="#transporte">Transporte</a>
+        <a href="#formulario">RSVP</a>
+      </div>
+    </nav>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-kicker">Nos casamos</p>
+      <h1>Cristina &amp; Diego</h1>
+      <p class="hero-date">Antiguo Convento de Boadilla</p>
+      <p class="hero-date">Madrid · 27 de febrero 2027</p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#formulario">Confirmar asistencia</a>
+        <a class="btn btn-secondary" href="#info">Ver información</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="bienvenida" class="fondo fondo1">
+      <div class="contenido-fondo">
+        <p class="bloque-kicker">Bienvenidos</p>
+        <h2>Nos hace muchísima ilusión celebrar este día con vosotros</h2>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="container narrow">
+        <p class="intro-text">
+          Estamos felices de celebrar este día con vosotros. Aquí podéis encontrar
+          toda la información importante sobre la ceremonia, transporte y confirmación de asistencia.
+        </p>
+      </div>
+    </section>
+
+    <section id="info" class="fondo fondo2">
+      <div class="contenido-fondo">
+        <p class="bloque-kicker">Información</p>
+        <h2>Todo lo que necesitáis para acompañarnos</h2>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Información</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Ceremonia</h3>
+            <p>Antiguo Convento de Boadilla</p>
+            <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+          </article>
+
+          <article class="card">
+            <h3>Cómo llegar</h3>
+            <p>Consulta la ruta directa en Google Maps.</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Antiguo+Convento+de+Boadilla" target="_blank">Abrir Google Maps</a>
+          </article>
+
+          <article class="card">
+            <h3>Taxis</h3>
+            <p>Taxi Boadilla</p>
+            <a href="tel:+34916438651">Llamar al 91 643 86 51</a><br>
+            <a href="https://www.radiotaxiboadilladelmonte.es/" target="_blank">Sitio web</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="transporte" class="fondo fondo3">
+      <div class="contenido-fondo">
+        <p class="bloque-kicker">Transporte</p>
+        <h2>Opciones para llegar y volver cómodamente</h2>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Transporte público</h2>
+
+        <div class="info-grid">
+          <article class="info-block">
+            <h3>Antes de las 2:00</h3>
+            <p>
+              Metro ligero ML3, parada <strong>Colonia Jardín</strong>, y después conexión con
+              Metro Línea 10 hasta Príncipe Pío.
+            </p>
+            <a href="https://maps.app.goo.gl/bTeu8MXis4Bp3rFo9" target="_blank">Ver ruta</a>
+          </article>
+
+          <article class="info-block">
+            <h3>Después de las 2:00</h3>
+            <p>
+              Bus nocturno N902, parada <strong>Ctra Majadahonda - Av. Adolfo Suárez</strong>,
+              con conexión hasta Moncloa.
+            </p>
+            <a href="https://maps.app.goo.gl/rUhMUcKGp4VPCvbW7" target="_blank">Ver ruta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Alojamiento</h2>
+        <div class="single-card">
+          <p>
+            Aquí van los hoteles que me manden Diego y Cris.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="formulario" class="section rsvp">
+      <div class="container narrow">
+        <h2>Confirmación de asistencia</h2>
+        <p class="rsvp-text">
+          Por favor, confirma tu asistencia antes del 1 de septiembre.
+        </p>
+
+        <form id="formularioUnico">
+          <div class="form-row">
+            <input class="formulario_input" type="text" name="nombreCompleto" placeholder="Nombre completo" required>
+          </div>
+
+          <div class="form-row">
+            <select class="formulario_select" name="asistencia" required>
+              <option value="asistira">Asistiré</option>
+              <option value="noAsistira">No podré asistir</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <button class="formulario_button" type="submit">Confirmar asistencia</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+</body>
 </html>
