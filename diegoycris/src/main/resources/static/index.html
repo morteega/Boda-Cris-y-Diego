@@ -26,11 +26,19 @@
       <h1>Cristina &amp; Diego</h1>
       <p class="hero-date">Antiguo Convento de Boadilla</p>
       <p class="hero-date">Madrid · 27 de febrero 2027</p>
-
+      <section class="cuenta-atras">
+      <div id="countdown"></div>
+      </section>
       <div class="hero-buttons">
         <a class="btn btn-primary" href="#formulario">Confirmar asistencia</a>
         <a class="btn btn-secondary" href="#info">Ver información</a>
       </div>
+      <div class="scroll">
+          <span>Desliza</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </div>
+      
     </div>
   </header>
 
@@ -134,9 +142,60 @@
         </form>
       </div>
     </section>
-     </div>
-    </section>
+  </div>
+  </section>
   </main>
+<script>
+  const weddingDate = new Date("2027-02-27T18:00:00").getTime();
+  const countdown = document.getElementById("countdown");
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const difference = weddingDate - now;
+
+    if (difference <= 0) {
+      countdown.innerHTML = `<div class="countdown-final">¡Hoy es el gran día! 💍</div>`;
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `
+      <div class="countdown-item">
+        <span class="countdown-number">${days}</span>
+        <span class="countdown-label">días</span>
+      </div>
+
+      <span class="countdown-separator">·</span>
+
+      <div class="countdown-item">
+        <span class="countdown-number">${hours}</span>
+        <span class="countdown-label">horas</span>
+      </div>
+
+      <span class="countdown-separator">·</span>
+
+      <div class="countdown-item">
+        <span class="countdown-number">${minutes}</span>
+        <span class="countdown-label">minutos</span>
+      </div>
+
+      <span class="countdown-separator">·</span>
+
+      <div class="countdown-item">
+        <span class="countdown-number">${seconds}</span>
+        <span class="countdown-label">segundos</span>
+      </div>
+    `;
+  }
+
+  updateCountdown();
+  const interval = setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>

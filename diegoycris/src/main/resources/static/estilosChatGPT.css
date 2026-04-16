@@ -75,7 +75,7 @@ body {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  margin: auto;
+  margin: 40px auto 0;
   text-align: center;
   color: white;
   padding: 40px 20px 90px;
@@ -358,4 +358,82 @@ main,
   #formularioUnico {
     padding: 24px;
   }
+}
+  #countdown{
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    animation: fadeUp 1s 1s forwards;
+}
+  .cuenta-atras{
+    margin: 60px;
+    padding: 2px;
+  }
+  .scroll{
+    margin-top:100px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeUp 1s 1.6s forwards;
+  }
+  .scroll-arrow{
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: scrollLine 1.8s 1.8s infinite;
+}
+@keyframes scrollLine {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.countdown-label {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v17/rP2Wp2ywxg089UriCZaSExdy3sGt9zz86D3wyKK58UfivUw4aw.woff2') format('woff2');
 }
