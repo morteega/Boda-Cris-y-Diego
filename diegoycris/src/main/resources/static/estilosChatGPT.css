@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   background-image: url("img/imagen_elegida.jpg");
   background-size: cover;
   background-position: center;
@@ -54,8 +56,9 @@ body {
 }
 
 .menu {
-  display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
 .menu a {
@@ -109,6 +112,8 @@ body {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn {
@@ -343,12 +348,16 @@ main,
     background-attachment: scroll;
   }
 
+  
   .hero-content {
-    padding-bottom: 70px;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 0;
+    padding: 20px 16px 50px;
   }
 
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .section {
@@ -359,18 +368,19 @@ main,
     padding: 24px;
   }
 }
-  #countdown{
-    font-family: 'DM Sans', sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 2rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    animation: fadeUp 1s 1s forwards;
+  #countdown {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 1s 1s forwards;
 }
   .cuenta-atras{
-    margin: 60px;
+    margin: 30px 0;
     padding: 2px;
   }
   .scroll{
@@ -425,7 +435,7 @@ main,
 }
 .countdown-label {
   margin-top: 0.45rem;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: lowercase;
   color: rgba(255, 255, 255, 0.9);
