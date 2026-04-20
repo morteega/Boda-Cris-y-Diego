@@ -57,12 +57,13 @@ body {
 
 .menu {
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 50px;
   justify-content: center;
 }
 
 .menu a {
   color: white;
+  margin: 0 8px;
   text-decoration: none;
   font-size: 0.92rem;
   letter-spacing: 0.08em;
@@ -93,10 +94,10 @@ body {
 }
 
 .hero-content h1 {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 1.05;
-  font-weight: 400;
   margin-bottom: 18px;
 }
 
@@ -181,7 +182,6 @@ main,
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  
   overflow: hidden;
 }
 
@@ -322,6 +322,211 @@ main,
   background: #43362d;
 }
 
+/* COUNTDOWN */
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+}
+
+.countdown-number {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1;
+  color: white;
+}
+
+.countdown-separator {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: rgba(255,255,255,0.9);
+  align-self: center;
+}
+
+.countdown-label {
+  margin-top: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: rgba(255,255,255,0.9);
+  text-transform: lowercase;
+}
+
+.cuenta-atras {
+  margin: 30px 0;
+  padding: 2px;
+}
+
+/* SCROLL */
+.scroll {
+  margin-top: 100px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeUp 1s 1.6s forwards;
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: scrollLine 1.8s 1.8s infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmsans/v17/rP2Wp2ywxg089UriCZaSExdy3sGt9zz86D3wyKK58UfivUw4aw.woff2') format('woff2');
+}
+
+/* SPOTIFY */
+.playlist-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.playlist-info {
+  width: 300px;
+  height: 300px;
+
+  margin-left: 250px;
+  margin-top: 50px;
+
+  background: beige;
+
+  padding: 30px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.text_spotify {
+  max-width: 100%;
+  text-align: center;
+  padding-left: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2d241d;
+
+}
+
+.text_spotify p {
+  line-height: 1.6;
+}
+
+.spotify-cta-wrapper {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.spotify-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #1ed760;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.spotify-cta svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.spotify-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(29, 185, 84, 0.25);
+}
+
+.playlist-preview {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 250px;
+  margin-top: 29px;
+  opacity: 0.8;
+}
+
+.playlist-preview iframe {
+  width: 100%;
+  display: block;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .cards,
@@ -345,10 +550,12 @@ main,
 @media (max-width: 768px) {
   .hero,
   .fondo-conjunto {
+    background-size: cover;
+    background-position: center top;
     background-attachment: scroll;
+    min-height: 80svh;
   }
 
-  
   .hero-content {
     width: 100%;
     max-width: 100%;
@@ -367,83 +574,26 @@ main,
   #formularioUnico {
     padding: 24px;
   }
-}
-  #countdown {
-  font-family: 'DM Sans', sans-serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 2rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeUp 1s 1s forwards;
-}
-  .cuenta-atras{
-    margin: 30px 0;
-    padding: 2px;
-  }
-  .scroll{
-    margin-top:100px;
-    z-index: 2;
-    display: flex;
+
+  .playlist-layout {
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    animation: fadeUp 1s 1.6s forwards;
   }
-  .scroll-arrow{
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.4);
-    position: relative;
-    overflow: hidden;
+
+  .playlist-info,
+  .playlist-preview,
+  .text_spotify {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0;
   }
-.scroll-arrow::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.8);
-  animation: scrollLine 1.8s 1.8s infinite;
-}
-@keyframes scrollLine {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-100%);
+
+  .spotify-cta-wrapper {
+    justify-content: center;
+    padding-left: 0;
   }
-  30% {
-    opacity: 1;
+
+  .text_spotify {
+    text-align: center;
   }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(100%);
-  }
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.countdown-label {
-  margin-top: 0.45rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: rgba(255, 255, 255, 0.9);
-}
-@font-face {
-  font-family: 'DM Sans';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/dmsans/v17/rP2Wp2ywxg089UriCZaSExdy3sGt9zz86D3wyKK58UfivUw4aw.woff2') format('woff2');
 }

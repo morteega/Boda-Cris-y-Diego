@@ -1,5 +1,11 @@
 Link a la iglesia antiguo convento (ceremonia) como ha dicho Cristina a parte del link al antiguo convento(celebracion)
-Formulario con sugerencias de musica.
+Link a una playlist publica de spotify para que la gente pueda añadir sus sugerencias.
 Completar formulario confirmacion con intolerancias a la comida y alergias.
 Retocar formularios.
 Intentar poner varias fotos entre medias de la informacion o ir cambiando de fondo
+Arreglar fondo para el movil, supongo que en @media
+
+
+Nada del mismo fondo siempre, tapar con bloques de colores del mimso tono pero distintos colores y hacer diesños 
+de las cosas que vaya a poner en cada apartado. asi quedaria mejor yo creo
+Y añadir la seccion de fotos y cuenta de banco para los regalos.
