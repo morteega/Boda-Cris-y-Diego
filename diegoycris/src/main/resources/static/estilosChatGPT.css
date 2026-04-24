@@ -656,25 +656,39 @@ main,
     padding: 24px;
   }
 
+  @media (max-width: 768px) {
   .playlist-layout {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 
   .playlist-info,
-  .playlist-preview,
-  .text_spotify {
-    max-width: 100%;
+  .playlist-preview {
+    width: 90%;
+    max-width: 340px;
+  }
+
+  .playlist-info {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .playlist-preview iframe {
     width: 100%;
-    padding-left: 0;
+    height: 300px;
   }
 
-  .spotify-cta-wrapper {
+  .spotify-cta {
+    width: 100%;
     justify-content: center;
-    padding-left: 0;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
   }
 
-  .text_spotify {
-    text-align: center;
+  .text_spotify p {
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
+}
 }
