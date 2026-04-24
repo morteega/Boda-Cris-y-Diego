@@ -10,6 +10,7 @@ html, body {
 }
 
 body {
+  margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #1f1f1f;
   background: transparent;
@@ -174,15 +175,40 @@ main,
   width: min(760px, 92%);
 }
 
-/* FONDO COMPARTIDO */
-.fondo-conjunto {
-  position: relative;
-  background-image: url("img/imagen_elegida.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
+/* FONDOS */
+.fondo-bienvenida {
+  background-color: beige;
+  margin: 0;
+  padding: 90px 20px;
+  width: 100%;
+}
+
+.fondo-bienvenida .intro {
+  padding: 0 0 70px;
+  margin: 0;
+}
+
+.fondo-bienvenida #info {
+  padding: 0;
+  margin: 0;
+}
+.fondo-transporte {
+  background-color: #C9C5B1;
+  margin: 0;
+  padding: 90px 20px;
+  width: 100%;
+}
+.fondo-alojamientos {
+  background-color: #787569;
+  margin: 0;
+  padding: 90px 20px;
+  width: 100%;
+}
+.fondo-playlist{
+  background-color: #4F4D46;
+  margin: 0;
+  padding: 90px 20px;
+  width: 100%;
 }
 
 .overlay-fondo {
