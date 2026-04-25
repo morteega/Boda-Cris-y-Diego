@@ -46,16 +46,18 @@
     <section id="CrisYDiego" class="section fondo-crisydiego">
       <div class="container narrow">
         <h2>Sobre Nostros</h2>
-        <p>
-          Texto que quieran poner sobre ellos.
-        </p>
         <div class="galeria">
-          <button class="flecha izquierda" id="anterior">&#10094;</button>
-
-          <img src="img/imagen_elegida.jpg" class="foto activa" alt="Foto 1">
-          <img src="img/image.jpg" class="foto" alt="Foto 2">
-
-          <button class="flecha derecha" id="siguiente">&#10095;</button>
+          <div class="galeria_track" id="galeria_track" style="transform: translateX(-387px);">
+            <div class="galeria_slide active" aria-hidden="true">
+              <img src="img/imagen_elegida.jpg" alt="diseñoCris" loading="lazy">
+            </div> 
+            <div class="galeria_slide" aria-hidden="true"> 
+              <img src="img/image.jpg" alt="fotoAntigua" loading="lazy">
+            </div>
+            <div class="galeria_slide" aria-hiddden="true">
+              <img src="img/icono_spotify.png" alt="pruebaconSpoti" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </section>
