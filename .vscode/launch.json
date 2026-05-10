@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DiegoYCrisApplication<diegoycris>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.boda.diegoycris.DiegoYCrisApplication",
+            "projectName": "diegoycris",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
