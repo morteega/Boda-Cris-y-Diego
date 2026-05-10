@@ -11,16 +11,20 @@ public class Rsvp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Enumerated(EnumType.STRING)
     @Column(name = "assist")
     public Assist assist;
     @Column(name = "updated_at")
     private long updatedAt;
-    
+    @Column(name="intolerances")
+    private String intolerances;
+
     public Rsvp() {}
 
-    public Rsvp(String fullName, Assist assist) {
+    public Rsvp(String fullName, Assist assist, String intolerances) {
         this.fullName = fullName;
         this.assist = assist;
+        this.intolerances = intolerances;
         Date upadated = new Date();
         this.updatedAt = upadated.getTime();
     }
@@ -42,6 +46,11 @@ public class Rsvp {
     public long getUpdatedAt() {
         return updatedAt;
     }
-
+    public String getIntolerances() {
+        return intolerances;
+    }
+    public void setIntolerances(String intolerances) {
+        this.intolerances = intolerances;
+    }
 
 }

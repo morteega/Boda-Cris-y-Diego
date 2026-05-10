@@ -6,6 +6,7 @@
 
 html, body {
   width: 100%;
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -230,55 +231,175 @@ main,
   z-index: 2;
 }
 /* FOTOS DE LA GALERIA */
-.galeria {
+/* GALERÍA ESTILO CARRUSEL ELEGANTE */
+.galeria-elegante {
   position: relative;
   width: 100%;
-  height: 450px;
+  max-width: 1050px;
+  height: 620px;
   margin: 0 auto;
-  overflow: hidden;
-  border-radius: 20px;
-}
-.galeria {
-  overflow: hidden;
+  overflow: visible;
 }
 
-.galeria_slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-.navegator{
+.galeria-elegante .galeria_slide {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--cream-dark);
-  background: rgba(254, 252, 248, 0.88);
-  backdrop-filter: blur(6px);
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.2s, transform 0.2s;
-  z-index: 2;
-  color: var(--charcoal);
+  top: 0;
+  left: 50%;
+  width: 58%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.85);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s ease,
+    filter 0.9s ease;
+  pointer-events: none;
 }
 
-.foto {
-  display: none;
+.galeria-elegante .galeria_slide img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 
-.foto.activa {
-  display: block;
+/* Foto principal */
+.galeria-elegante .galeria_slide.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  z-index: 3;
+  filter: none;
 }
 
+/* Foto izquierda */
+.galeria-elegante .galeria_slide.prev {
+  opacity: 0.28;
+  transform: translateX(-90%) scale(0.78);
+  z-index: 1;
+  filter: blur(0.4px);
+}
 
+/* Foto derecha */
+.galeria-elegante .galeria_slide.next {
+  opacity: 0.28;
+  transform: translateX(-5%) scale(0.78);
+  z-index: 1;
+  filter: blur(0.4px);
+}
+
+/* Fotos ocultas */
+.galeria-elegante .galeria_slide.hidden-slide {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.7);
+  z-index: 0;
+}
+
+/* Botones */
+.galeria-elegante .navegator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 250, 242, 0.92);
+  box-shadow: 0 8px 25px rgba(50, 35, 20, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  color: #2d241d;
+  font-size: 34px;
+  line-height: 1;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.galeria-elegante .navegator:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: rgba(255, 250, 242, 1);
+}
+
+.galeria-elegante .anterior {
+  left: 13%;
+}
+
+.galeria-elegante .siguiente {
+  right: 13%;
+}
+
+/* Puntitos inferiores */
+.galeria-dots {
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 11px;
+  z-index: 6;
+}
+
+.galeria-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(120, 117, 105, 0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.galeria-dot.active {
+  background: #8f1d3b;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .galeria-elegante {
+    height: 480px;
+    overflow: hidden;
+  }
+
+  .galeria-elegante .galeria_slide {
+    width: 78%;
+  }
+
+  .galeria-elegante .galeria_slide.prev {
+    transform: translateX(-125%) scale(0.75);
+  }
+
+  .galeria-elegante .galeria_slide.next {
+    transform: translateX(25%) scale(0.75);
+  }
+
+  .galeria-elegante .anterior {
+    left: 18px;
+  }
+
+  .galeria-elegante .siguiente {
+    right: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-elegante {
+    height: 420px;
+  }
+
+  .galeria-elegante .galeria_slide {
+    width: 88%;
+  }
+
+  .galeria-elegante .galeria_slide.prev,
+  .galeria-elegante .galeria_slide.next {
+    opacity: 0;
+  }
+}
 
 /* TEXTOS */
 .section h2 {

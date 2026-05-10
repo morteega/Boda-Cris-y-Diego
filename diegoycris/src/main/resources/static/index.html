@@ -46,24 +46,42 @@
     <section id="CrisYDiego" class="section fondo-crisydiego">
       <div class="container narrow">
         <h2>Sobre Nostros</h2>
-        <div class="galeria">
-          <div class="galeria_track" id="galeria_track" style="transform: translateX(-387px);">
-            <div class="galeria_slide active" aria-hidden="true">
-              <img src="img/imagen_elegida.jpg" alt="diseñoCris" loading="lazy">
-            </div> 
-            <div class="galeria_slide" aria-hidden="true"> 
-              <img src="img/image.jpg" alt="fotoAntigua" loading="lazy">
-            </div>
-            <div class="galeria_slide" aria-hiddden="true">
-              <img src="img/icono_spotify.png" alt="pruebaconSpoti" loading="lazy">
-            </div>
+        <div class="galeria galeria-elegante">
+          <div class="galeria_slide active">
+            <img src="img/imagen_elegida.jpg" alt="diseñoCris" loading="lazy">
           </div>
-          <button class ="navegator" id="anterior" arial-label="Anterior">
-            <svg viewBox="0 0 16 16" fill="none"></svg>
+
+          <div class="galeria_slide next">
+            <img src="img/image.jpg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky1.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky2.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky3.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky4.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky5.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/vicky6.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+
+          <button class="navegator anterior" id="anterior" aria-label="Anterior">
+            <img src="img/chevron-left.svg" alt="Anterior">
           </button>
-          <button class="navegator" id="siguiente" aria-label="Siguiente">
-            <svg viewBox="0 0 16 16" fill="none"></svg>
+
+          <button class="navegator siguiente" id="siguiente" aria-label="Siguiente">
+            <img src="img/chevron-right.svg" alt="Siguiente">
           </button>
+
+          <div class="galeria-dots" id="galeria_dots"></div>
         </div>
       </div>
     </section>
@@ -86,6 +104,12 @@
           <h3>Ceremonia</h3>
           <p>Antiguo Convento de Boadilla</p>
           <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+        </article>
+
+        <article class="card">
+          <h3>Banquete</h3>
+          <p>Lo que me digan que es el banquete</p> <!-- Fotos del lugar del banquete y lugar de la ceremonia-->
+          <a href="https://elconvento.net/" target="blank">Visitar sitio web</a> 
         </article>
 
         <article class="card">
@@ -210,6 +234,40 @@
     </section>
   </div>
   </main>
+  <script>
+  const formularioRsvp = document.getElementById("formularioUnico");
+
+  formularioRsvp.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const datos = {
+      fullName: formularioRsvp.nombreCompleto.value.trim(),
+      intolerances: formularioRsvp.intolerancias.value.trim(),
+      assist: formularioRsvp.asistencia.value === "asistira" ? "YES" : "NO"
+    };
+
+    try {
+      const respuesta = await fetch("http://localhost:8080/api/rsvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(datos)
+      });
+
+      if (!respuesta.ok) {
+        throw new Error("Error al enviar RSVP");
+      }
+
+      alert("Confirmación enviada correctamente. ¡Gracias!");
+      formularioRsvp.reset();
+
+    } catch (error) {
+      console.error(error);
+      alert("No se pudo enviar la confirmación. Inténtalo de nuevo.");
+    }
+  });
+</script>
 <script>
   const weddingDate = new Date("2027-02-27T18:00:00").getTime();
   const countdown = document.getElementById("countdown");
@@ -262,39 +320,64 @@
   const interval = setInterval(updateCountdown, 1000);
 </script>
 <script>
-  const fotos = document.querySelectorAll(".foto");
+  const slides = document.querySelectorAll(".galeria-elegante .galeria_slide");
   const botonAnterior = document.getElementById("anterior");
   const botonSiguiente = document.getElementById("siguiente");
+  const dotsContainer = document.getElementById("galeria_dots");
 
   let indiceActual = 0;
 
-  function mostrarFoto(indice) {
-    fotos.forEach(function(foto) {
-      foto.classList.remove("activa");
+  slides.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.classList.add("galeria-dot");
+    dot.setAttribute("aria-label", `Ir a la foto ${index + 1}`);
+
+    dot.addEventListener("click", () => {
+      indiceActual = index;
+      actualizarGaleria();
     });
 
-    fotos[indice].classList.add("activa");
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".galeria-dot");
+
+  function actualizarGaleria() {
+    const total = slides.length;
+
+    slides.forEach((slide, index) => {
+      slide.classList.remove("active", "prev", "next", "hidden-slide");
+
+      const anterior = (indiceActual - 1 + total) % total;
+      const siguiente = (indiceActual + 1) % total;
+
+      if (index === indiceActual) {
+        slide.classList.add("active");
+      } else if (index === anterior) {
+        slide.classList.add("prev");
+      } else if (index === siguiente) {
+        slide.classList.add("next");
+      } else {
+        slide.classList.add("hidden-slide");
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === indiceActual);
+    });
   }
 
-  botonSiguiente.addEventListener("click", function() {
-    indiceActual++;
-
-    if (indiceActual >= fotos.length) {
-      indiceActual = 0;
-    }
-
-    mostrarFoto(indiceActual);
+  botonSiguiente.addEventListener("click", function () {
+    indiceActual = (indiceActual + 1) % slides.length;
+    actualizarGaleria();
   });
 
-  botonAnterior.addEventListener("click", function() {
-    indiceActual--;
-
-    if (indiceActual < 0) {
-      indiceActual = fotos.length - 1;
-    }
-
-    mostrarFoto(indiceActual);
+  botonAnterior.addEventListener("click", function () {
+    indiceActual = (indiceActual - 1 + slides.length) % slides.length;
+    actualizarGaleria();
   });
+
+  actualizarGaleria();
 </script>
 
 </body>
