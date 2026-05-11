@@ -10,7 +10,9 @@
 
   <header class="hero">
     <nav class="topbar">
-      <div class="brand">C&amp;D</div>
+      <div class="brand">
+        <img src="img/LogoCyD.jpeg" alt="Logo de la boda" class="logo">
+      </div>
       <div class="menu">
         <a href="#bienvenida">Inicio</a>
         <a href="#info">Información</a>
@@ -50,27 +52,32 @@
           <div class="galeria_slide active">
             <img src="img/imagen_elegida.jpg" alt="diseñoCris" loading="lazy">
           </div>
-
+          <div class="galeria_slide next">
+            <img src="img/CyD1.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD2.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD3.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD4.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD5.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD6.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD7.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
+          <div class="galeria_slide next">
+            <img src="img/CyD8.jpeg" alt="fotoAntigua" loading="lazy">
+          </div>
           <div class="galeria_slide next">
             <img src="img/image.jpg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky1.jpeg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky2.jpeg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky3.jpeg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky4.jpeg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky5.jpeg" alt="fotoAntigua" loading="lazy">
-          </div>
-          <div class="galeria_slide next">
-            <img src="img/vicky6.jpeg" alt="fotoAntigua" loading="lazy">
           </div>
 
           <button class="navegator anterior" id="anterior" aria-label="Anterior">
@@ -86,32 +93,37 @@
       </div>
     </section>
     <section id="bienvenida" class="section fondo-bienvenida">
-  <section class="intro">
-    <div class="container narrow">
-      <p class="intro-text">
-        Estamos felices de celebrar este día con vosotros. Aquí podéis encontrar
-        toda la información importante sobre la ceremonia, transporte y confirmación de asistencia.
-      </p>
-    </div>
-  </section>
 
   <section id="info">
     <div class="container">
-      <h2>Información</h2>
+      <h2>Información del Lugar</h2>
 
       <div class="cards">
-        <article class="card">
-          <h3>Ceremonia</h3>
-          <p>Antiguo Convento de Boadilla</p>
-          <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+        <article class="card ceremonia">
+          <div class="card-texto">
+            <h3>Ceremonia</h3>
+              <p>Antiguo Convento de Boadilla</p>
+                <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+          </div>
+
+          <div class="card-fotoceremonia">
+            <img src="img/Iglesia.jpeg" alt="Ceremonia">
+          </div>
         </article>
 
-        <article class="card">
-          <h3>Banquete</h3>
-          <p>Lo que me digan que es el banquete</p> <!-- Fotos del lugar del banquete y lugar de la ceremonia-->
-          <a href="https://elconvento.net/" target="blank">Visitar sitio web</a> 
-        </article>
+        <article class="card banquete">
+          <div class="card-texto">
+            <h3>Banquete</h3>
+              <p>Lo que me digan que es el banquete</p>
+                <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
+          </div>
 
+          <div class="card-fotobanquete">
+            <img src="img/AntiguoConvento.jpeg" alt="Banquete">
+          </div>
+        </article>
+      </div>
+<!--
         <article class="card">
           <h3>Cómo llegar</h3>
           <p>Consulta la ruta directa en Google Maps.</p>
@@ -123,8 +135,7 @@
           <p>Taxi Boadilla</p>
           <a href="tel:+34916438651">Llamar al 91 643 86 51</a><br>
           <a href="https://www.radiotaxiboadilladelmonte.es/" target="_blank">Sitio web</a>
-        </article>
-      </div>
+        </article> -->
     </div>
   </section>
 </section>
@@ -166,40 +177,37 @@
     </section>
 
     <section id="playlist" class="section fondo-playlist">
-  <h2>Nuestra Playlist</h2>
-  <div class="playlist-layout">
-    <div class="playlist-info">
-      <div class="text_spotify">
-        <p>
-          ¡Nos encantaría que formaseis parte de esta experiencia añadiendo vuestra música favorita,
-          o la que pensáis que debería sonar en nuestra boda!
-        </p>
-      </div>
-      <div class="spotify-cta-wrapper">
-        <a href="https://open.spotify.com/playlist/TU_LINK"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="spotify-cta">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.622.622 0 1 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.112a.622.622 0 0 1 .207.86zm1.131-2.946a.78.78 0 0 1-1.072.266c-2.66-1.632-6.712-2.003-9.865-1.102a.78.78 0 0 1-.428-1.5c3.602-1.03 8.086-.615 11.106 1.24a.78.78 0 0 1 .259 1.096zm.105-3.285c-3.19-1.895-8.455-2.07-11.5-1.176a.937.937 0 1 1-.526-1.799c3.495-1.03 9.296-.832 12.983 1.356a.937.937 0 1 1-.957 1.619z"/>
-          </svg>
-          Añadir canción a la playlist
-        </a>
-      </div>
-    </div>
+      <h2>Nuestra Playlist</h2>
+        <div class="playlist-layout">
+          <div class="playlist-info">
+            <div class="text_spotify">
+                <p>
+                  ¡Nos encantaría que formaseis parte de esta experiencia añadiendo vuestra música favorita,
+                  o la que pensáis que debería sonar en nuestra boda!
+                </p>
+              </div>
+              <div class="spotify-cta-wrapper">
+                <a href="https://open.spotify.com/playlist/4l0D7oFYnezxtrLfGBBHzC?si=e0fb8eb536ed468a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="spotify-cta">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.622.622 0 1 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.112a.622.622 0 0 1 .207.86zm1.131-2.946a.78.78 0 0 1-1.072.266c-2.66-1.632-6.712-2.003-9.865-1.102a.78.78 0 0 1-.428-1.5c3.602-1.03 8.086-.615 11.106 1.24a.78.78 0 0 1 .259 1.096zm.105-3.285c-3.19-1.895-8.455-2.07-11.5-1.176a.937.937 0 1 1-.526-1.799c3.495-1.03 9.296-.832 12.983 1.356a.937.937 0 1 1-.957 1.619z"/>
+                    </svg>
+                  Añadir canción a la playlist
+                </a>
+              </div>
+          </div>
 
     <div class="playlist-preview">
-      <iframe
-        data-testid="embed-iframe"
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1EJCuTeOYzqyPC?utm_source=generator"
-        width="100%"
-        height="352"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
+      <iframe data-testid="embed-iframe" 
+        src="https://open.spotify.com/embed/playlist/4l0D7oFYnezxtrLfGBBHzC?utm_source=generator" 
+        width="100%" 
+        height="400" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -269,7 +277,7 @@
   });
 </script>
 <script>
-  const weddingDate = new Date("2027-02-27T18:00:00").getTime();
+  const weddingDate = new Date("2027-02-27T00:00:00").getTime();
   const countdown = document.getElementById("countdown");
 
   function updateCountdown() {
