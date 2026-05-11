@@ -697,6 +697,7 @@ main,
 }
 
 .text_spotify p {
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -715,7 +716,7 @@ main,
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
   transition: 0.25s ease;
@@ -861,8 +862,8 @@ main,
   }
 
   .text_spotify p {
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    line-height: 1.8;
   }
 }
 
