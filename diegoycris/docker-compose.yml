@@ -1,0 +1,20 @@
+services:
+  boda:
+    build: .
+    container_name: boda-crisdiego
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: "-Xmx256m"
+    volumes:
+      - boda_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  boda_data:
