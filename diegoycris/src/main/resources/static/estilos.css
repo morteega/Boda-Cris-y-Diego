@@ -529,6 +529,25 @@ main,
   grid-template-columns: repeat(3, 1fr);
 }
 
+.info-block-centrado {
+  grid-column: 1 / -1;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-block-centrado p {
+  margin-top: 26px;
+}
+
+.info-block-centrado p:first-of-type {
+  margin-top: 0;
+}
+
+.info-block-centrado a {
+  margin-top: 4px;
+}
+
 .estrellas {
   display: inline-block;
   margin-left: 8px;
@@ -563,6 +582,10 @@ main,
   background: rgba(255, 255, 255, 0.95);
   color: #2a2a2a;
   outline: none;
+}
+
+.formulario_select {
+  color-scheme: light;
 }
 
 .formulario_input:focus,
