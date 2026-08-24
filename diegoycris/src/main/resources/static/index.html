@@ -18,6 +18,7 @@
         <a href="#info">Información</a>
         <a href="#transporte">Transporte</a>
         <a href="#formulario">CONFIRMACIÓN</a>
+        <button id="btnTraducirIT" class="lang-toggle" type="button">🇮🇹 Italiano</button>
       </div>
     </nav>
 
@@ -47,7 +48,7 @@
   <main>
     <section id="CrisYDiego" class="section fondo-crisydiego">
       <div class="container ">
-        <h2>Sobre Nostros</h2>
+        <h2>Nuestra Historia</h2>
         <div class="historia-texto">
           <p>
             Nos conocimos en 2014, en la Facultad de Farmacia de la Universidad San Pablo CEU. Entre clases
@@ -139,7 +140,7 @@
         <article class="card banquete">
           <div class="card-texto">
             <h3>Cóctel y banquete</h3>
-              <p class="hora">14:00 h - 23:00 h</p>
+              <p class="hora">14:00 h - 23:30 h</p>
               <p>Antiguo Convento de Boadilla del Monte</p>
                 <a href="https://elconvento.net/" target="_blank">Visitar sitio web</a>
           </div>
@@ -196,13 +197,13 @@
         <article class="info-block info-block-centrado">
           <h3>Parking</h3>
 
-          <p>1. Aparcamiento El Palacio del Infante Don Luis</p>
+          <p>1. Aparcamiento El Palacio del Infante Don Luis (Gratis)</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Aparcamiento+El+Palacio+del+Infante+Don+Luis+Boadilla+del+Monte" target="_blank">Ver ubicación</a><br>
 
-          <p>2. Aparcamiento Municipal</p>
+          <p>2. Aparcamiento Municipal (Gratis)</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Aparcamiento+Municipal+Boadilla+del+Monte" target="_blank">Ver ubicación</a><br>
 
-          <p>3. Aparcamiento Plaza de la Concordia (de pago, 16,50&euro;/d&iacute;a)</p>
+          <p>3. Aparcamiento Plaza de la Concordia (de pago, 16,50&euro;/d&iacute;a y subterráneo)</p>
           <a href="https://www.google.com/maps/search/?api=1&query=Aparcamiento+Plaza+de+la+Concordia+Boadilla+del+Monte" target="_blank">Ver ubicación</a>
         </article>
         </div>
@@ -273,7 +274,7 @@
       <div class="container narrow">
         <h2>Confirmación de asistencia</h2>
         <p class="rsvp-text">
-          Por favor, confirma tu asistencia antes del 1 de septiembre.
+          Por favor, confirma tu asistencia antes del 9 de enero.
         </p>
 
         <form id="formularioUnico">
@@ -443,6 +444,50 @@
   });
 
   actualizarGaleria();
+</script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: "es", includedLanguages: "it", autoDisplay: false },
+      "google_translate_element"
+    );
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function obtenerCookieIdioma() {
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]*)/);
+    return match ? decodeURIComponent(match[1]) : "";
+  }
+
+  function fijarCookieIdioma(valor) {
+    document.cookie = `googtrans=${valor}; path=/`;
+    document.cookie = `googtrans=${valor}; path=/; domain=${window.location.hostname}`;
+  }
+
+  function borrarCookieIdioma() {
+    document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = `googtrans=; path=/; domain=${window.location.hostname}; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+  }
+
+  const btnTraducirIT = document.getElementById("btnTraducirIT");
+
+  function actualizarBotonIdioma() {
+    btnTraducirIT.textContent = obtenerCookieIdioma() === "/es/it" ? "🇪🇸 Español" : "🇮🇹 Italiano";
+  }
+
+  btnTraducirIT.addEventListener("click", function () {
+    if (obtenerCookieIdioma() === "/es/it") {
+      borrarCookieIdioma();
+    } else {
+      fijarCookieIdioma("/es/it");
+    }
+    window.location.reload();
+  });
+
+  actualizarBotonIdioma();
 </script>
 
 </body>
