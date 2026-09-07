@@ -102,44 +102,6 @@ body {
   opacity: 1;
 }
 
-.lang-toggle {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 999px;
-  padding: 4px 14px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.95;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.lang-toggle:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.14);
-}
-
-/* Oculta la barra que inyecta Google Translate para no romper el diseño */
-.goog-te-banner-frame.skiptranslate,
-#goog-gt-tt,
-.goog-te-balloon-frame,
-.goog-tooltip,
-.goog-tooltip:hover {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
-}
-
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -379,8 +341,8 @@ main,
   height: 54px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 250, 242, 0.92);
-  box-shadow: 0 8px 25px rgba(50, 35, 20, 0.12);
+  background: rgba(255, 250, 242, 0.35);
+  box-shadow: 0 8px 25px rgba(50, 35, 20, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,15 +354,27 @@ main,
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.galeria-elegante .navegator:hover {
-  transform: translateY(-50%) scale(1.08);
-  background: rgba(255, 250, 242, 1);
-}
-
 .galeria-elegante .navegator img {
   width: 26px;
   height: 26px;
   display: block;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .galeria-elegante .navegator:hover {
+    transform: translateY(-50%) scale(1.08);
+    background: rgba(255, 250, 242, 0.85);
+  }
+
+  .galeria-elegante .navegator:hover img {
+    opacity: 1;
+  }
+}
+
+.galeria-elegante .navegator:focus {
+  outline: none;
 }
 
 .galeria-elegante .anterior {
@@ -548,6 +522,10 @@ main,
   font-weight: 600;
 }
 
+.info-block h3 + a {
+  margin-top: 2px;
+}
+
 .card a:hover,
 .info-block a:hover {
   text-decoration: underline;
@@ -572,6 +550,24 @@ main,
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
+}
+.info-block-centrado-uber-cabify{
+  grid-column: 1 / -1;
+  width: calc(50% - 12px); /* mitad del ancho de fila menos medio gap (24px/2) */
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 900px) {
+  .info-block-centrado-uber-cabify {
+    width: 100%;
+  }
+}
+@media (min-width: 901px) {
+  .info-block-centrado.ancho-columna {
+    width: 538px;
+    max-width: 538px;
+  }
 }
 
 .info-block-centrado p {
