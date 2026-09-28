@@ -262,6 +262,29 @@ main,
   width: 100%;
 }
 
+.fondo-regalos {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+    url("img/CyD6.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 90px 20px;
+  width: 100%;
+}
+
+.regalos-text {
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.regalos-datos p {
+  margin: 6px 0;
+  overflow-wrap: anywhere;
+}
+
 .fondo-crisydiego {
   background-color: lightgray;
   margin: 0;
