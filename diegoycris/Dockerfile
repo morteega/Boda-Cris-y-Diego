@@ -24,7 +24,6 @@ COPY --from=build /build/target/*.jar app.jar
 # (respuestas-rsvp.csv, ruta relativa) se escriba ahí y persista en un volumen
 RUN mkdir -p /data && chown -R app:app /app /data
 WORKDIR /data
-USER app
 
 EXPOSE 8080
 
