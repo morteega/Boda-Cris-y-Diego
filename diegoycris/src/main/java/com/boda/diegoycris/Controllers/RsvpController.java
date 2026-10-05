@@ -3,7 +3,6 @@ package com.boda.diegoycris.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.boda.diegoycris.models.*;
 import com.boda.diegoycris.services.RsvpCsvService;
@@ -14,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -26,12 +24,7 @@ import org.springframework.http.HttpStatus;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api") 
-@CrossOrigin(origins = {
-    "http://localhost:5500",
-    "http://127.0.0.1:5500",
-    "https://sin-fondo-conjunto--monumental-pony-e908da.netlify.app/" 
-})  
+@RequestMapping("/api")
 public class RsvpController {
     private final RsvpRepository rsvpRepository;
     private final RsvpCsvService rsvpCsvService;
@@ -57,22 +50,8 @@ public class RsvpController {
         rsvpCsvService.guardarRsvp(savedRsvp);
         return savedRsvp;
     }
-    @GetMapping("/admin/rsvp/csv")
-    public ResponseEntity<Resource> descargarCsv() {
-        File file = new File("respuestas-rsvp.csv");
 
-        if (!file.exists()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        Resource resource = new FileSystemResource(file);
-
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=respuestas-rsvp.csv")
-                .contentType(MediaType.parseMediaType("text/csv"))
-                .body(resource);
-    }
-    @GetMapping("/api/rsvp/export")
+    @GetMapping("/rsvp/export")
     public ResponseEntity<Resource> export(@RequestParam String token) {
         if (!token.equals(System.getenv("EXPORT_TOKEN"))) {
             return ResponseEntity.status(403).build();
@@ -85,11 +64,6 @@ public class RsvpController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"rsvp.csv\"")
                 .contentType(MediaType.parseMediaType("text/csv"))
                 .body(new FileSystemResource(path));
-}
-
-    @GetMapping("/admin/rsvp")
-    public List<Rsvp> getAllRsvps() {
-        return rsvpRepository.findAll();
     }
 
 }
