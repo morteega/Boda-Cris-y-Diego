@@ -1,6 +1,7 @@
 package com.boda.diegoycris.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -14,6 +15,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,6 +72,20 @@ public class RsvpController {
                 .contentType(MediaType.parseMediaType("text/csv"))
                 .body(resource);
     }
+    @GetMapping("/api/rsvp/export")
+    public ResponseEntity<Resource> export(@RequestParam String token) {
+        if (!token.equals(System.getenv("EXPORT_TOKEN"))) {
+            return ResponseEntity.status(403).build();
+        }
+        Path path = Path.of("respuestas-rsvp.csv");
+        if (!Files.exists(path)) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"rsvp.csv\"")
+                .contentType(MediaType.parseMediaType("text/csv"))
+                .body(new FileSystemResource(path));
+}
 
     @GetMapping("/admin/rsvp")
     public List<Rsvp> getAllRsvps() {
