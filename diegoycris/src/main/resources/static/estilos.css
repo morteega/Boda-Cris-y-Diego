@@ -1015,6 +1015,10 @@ main,
     padding: 75px 18px;
   }
 
+  .fondo-regalos {
+    background-position: 30% center;
+  }
+
   #formularioUnico {
     padding: 24px;
   }
